@@ -28,9 +28,16 @@ function Player (name,strength,dexterity,constitution,wisdom,intelligence,charis
 playerArray = [];
 
 Monster.prototype = {
-	Attack: function () {}
-
+	Attack: function () {
+		var role = randomNumber(1,20);
+		if (playerClass) {
+			this.strength += role;
+			alert (characters.name + " has " + characters.strength + " for Strength \n" + characters.dexterity + "		for Dexterity \n");
+		} else {
+			this.dexterity += role;
+		} 
 	}
+
 }
 
 function randomNumber(min, max) {
