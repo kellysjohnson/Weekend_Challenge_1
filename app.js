@@ -1,17 +1,14 @@
+var Monster = { name: "", 
+				strength: "", 
+				dexterity: "", 
+				constitution: "", 
+				wisdom: "", 
+				intelligence: "", 
+				charisma: "" };
 
-var Monster = {
-	name:"",
-	strength: "",
-	dexterity: "",
-	constitution: "",
-	wisdom: "",
-	intelligence: "",
-	charisma: "" }
+var Player = Object.create(Monster);
+Player.playerClass = "";
 
-var Player = function() {
-	Object.create(Monster);
-	player.playerClass = playerClass;
-}
 
 
 function Player (name,strength,dexterity,constitution,wisdom,intelligence,charisma,playerclass) {
@@ -23,9 +20,11 @@ function Player (name,strength,dexterity,constitution,wisdom,intelligence,charis
 	this.intelligence = intelligence;
 	this.charisma = charisma;
 
-}
+};
 
 playerArray = [];
+
+
 
 Monster.prototype = {
 	Attack: function () {
@@ -36,8 +35,7 @@ Monster.prototype = {
 		} else {
 			this.dexterity += role;
 		} 
-	}
-
+	};
 }
 
 function randomNumber(min, max) {
@@ -53,4 +51,4 @@ var Monster =
 
 
 
-document.getElementById('addMonster').addEventListener('click', <functionNameGoesHere>)
+console.log(document.getElementById('addMonster').addEventListener('click', Player));
