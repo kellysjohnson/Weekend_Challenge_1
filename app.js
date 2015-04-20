@@ -1,4 +1,4 @@
-var Monster = { name:"Hamburgler",
+var Monster = { name:"Granger",
 				strength:8,
 				dexterity:7,
 				constitution:10,
@@ -8,10 +8,10 @@ var Monster = { name:"Hamburgler",
 
 console.log(Monster);
 
-var Player = Object.create(Monster);
-Player.playerClass = "Cleric";
+var Hero = Object.create(Monster);
+Hero.playerClass = "Cleric";
 
-console.log(Player);
+console.log(Hero);
 
 function randomNumber(min, max) {
 	return Math.floor(Math.random() * (1 + max - min) + min);
@@ -48,7 +48,20 @@ function Player (name,strength,dexterity,constitution,wisdom,intelligence,charis
 	};
 }
 
+//these were manuanlly entered to test the functions
+//var character1 = new Player("Kelly", 2, 5, 9, 11, 13, 2, "Wizard");
+//var character2 = new Player("Jim", 3, 5, 6, 21, 15, 12);
+
+
+//NOTE: I want to put a counter in my array, so that I can dyanmically create my character names, "character" + 
+
+playerArray [];
+
+
+
 document.getElementById("addMonster").addEventListener('click', addCharacter);
+
+
 
 function addCharacter(){
 	var nameInput = document.getElementById("name").value;
@@ -58,8 +71,13 @@ function addCharacter(){
 	var wisdomInput = document.getElementById("wisdom").value;
 	var intelligenceInput = document.getElementById("intelligence").value;
 	var charismaInput = document.getElementById("charisma").value;
-	var playerClassInput = document.getElementById("radio").value;
-}
+//	var playerClassInput = document.getElementById("radio").value;
+};
+
+Player(nameInput,strengthInput,dexterityInput,constitutionInput,wisdomInput,intelligenceInput,charismaInput,playerClassInput);
+
+console.log(Player);
+
 
 function clear(){
     document.getElementById("name").value="";
@@ -78,19 +96,18 @@ var playerClass = document.getElementsByName("playerClass");
 
 console.log(Player(addCharacter()));
 
-playerArray = [];
 
 if (document.getElementById("addMonster").addEventListener('click', addCharacter)){
 	playerArray = playerArray.push(addCharacter());
 }
 
-
+/*
 var rows = "";
-$.each(playerArray, function(){
+$.each(playerArray, function()){
     rows += "<tr><td>" + this.name + "</td><td>" + this.strength + "</td><td>" + this.dexterity + "</td><td>" + this.constitution + "</td></tr>"+ this.wisdom + "</td><td>" + this.intelligence + "</td><td>" + this.playerClass + "</td></tr>";
 });
 $( rows ).appendTo( "sweetTable tbody" );
-
+*/
 
 /*
 var outputTbl = document.getElementById("sweetTable");
