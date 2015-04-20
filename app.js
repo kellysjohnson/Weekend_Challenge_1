@@ -42,8 +42,8 @@ function Player (name,strength,dexterity,constitution,wisdom,intelligence,charis
 			this.strength += role;
 			alert(this.name + "s Charater Abilities are: \n" + this.strength + " for Strength \n" + this.dexterity + " for Dexterity \n" + this.constitution + " for Constitution\n" + this.wisdom + " for Wisdom\n" + this.intelligence + " for intelligence\n" + this.charisma + " for Charisma.");
 		} else {
-			alert("I have an ability!") 
 			this.dexterity += role;
+			alert(this.name + "s Charater Abilities are: \n" + this.strength + " for Strength \n" + this.dexterity + " for Dexterity \n" + this.constitution + " for Constitution\n" + this.wisdom + " for Wisdom\n" + this.intelligence + " for intelligence\n" + this.charisma + " for Charisma.");
 		} 
 	};
 }
@@ -58,8 +58,23 @@ function addCharacter(){
 	var wisdomInput = document.getElementById("wisdom").value;
 	var intelligenceInput = document.getElementById("intelligence").value;
 	var charismaInput = document.getElementById("charisma").value;
-	var playerClassInput = document.getElementById("radio").value;;
-};
+	var playerClassInput = document.getElementById("radio").value;
+}
+
+function clear(){
+    document.getElementById("name").value="";
+    document.getElementById("strength").value="";
+    document.getElementById("dexterity").value="";
+    document.getElementById("constitution").value="";
+    document.getElementById("wisdom").value="";
+    document.getElementById("intelligence").value="";
+    document.getElementById("charisma").value="";
+}
+
+var playerClass = document.getElementsByName("playerClass");
+   for(var i=0;i<playerClass.length;i++){
+      playerClass[i].checked = false;
+  }
 
 console.log(Player(addCharacter()));
 
@@ -68,6 +83,13 @@ playerArray = [];
 if (document.getElementById("addMonster").addEventListener('click', addCharacter)){
 	playerArray = playerArray.push(addCharacter());
 }
+
+
+var rows = "";
+$.each(playerArray, function(){
+    rows += "<tr><td>" + this.name + "</td><td>" + this.strength + "</td><td>" + this.dexterity + "</td><td>" + this.constitution + "</td></tr>"+ this.wisdom + "</td><td>" + this.intelligence + "</td><td>" + this.playerClass + "</td></tr>";
+});
+$( rows ).appendTo( "sweetTable tbody" );
 
 
 /*
