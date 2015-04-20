@@ -8,10 +8,10 @@ var Monster = { name:"Hamburgler",
 
 console.log(Monster);
 
-var Hero = Object.create(Monster);
-Hero.playerClass = "Cleric";
+var Player = Object.create(Monster);
+Player.playerClass = "Cleric";
 
-console.log(Hero);
+console.log(Player);
 
 function randomNumber(min, max) {
 	return Math.floor(Math.random() * (1 + max - min) + min);
@@ -51,22 +51,39 @@ function Player (name,strength,dexterity,constitution,wisdom,intelligence,charis
 document.getElementById("addMonster").addEventListener('click', addCharacter);
 
 function addCharacter(){
-	var nameInput = document.getElementById(name).value;
-	var strengthInput = document.getElementById(strength).value;
-	var dexterityInput = document.getElementById(dexterity).value;
-	var constitutionInput = document.getElementById(constitution).value;
-	var wisdomInput = document.getElementById(wisdom).value;
-	var intelligenceInput = document.getElementById(intelligence).value;
-	var charismaInput = document.getElementById(charisma).value;
-	var playerClassInput = document.getElementById(playerClass).value;
-}
+	var nameInput = document.getElementById("name").value;
+	var strengthInput = document.getElementById("strength").value;
+	var dexterityInput = document.getElementById("dexterity").value;
+	var constitutionInput = document.getElementById("constitution").value;
+	var wisdomInput = document.getElementById("wisdom").value;
+	var intelligenceInput = document.getElementById("intelligence").value;
+	var charismaInput = document.getElementById("charisma").value;
+	var playerClassInput = document.getElementById("radio").value;;
+};
+
+console.log(Player(addCharacter()));
 
 playerArray = [];
 
-if ()
-playerArray = playerArray.push()
+if (document.getElementById("addMonster").addEventListener('click', addCharacter)){
+	playerArray = playerArray.push(addCharacter());
+}
 
 
+/*
+var outputTbl = document.getElementById("sweetTable");
+
+var output = document.createElement("tr");
+outputTbl.appendChild(output);
+
+    for (index = 0; index < enteredStringsTwo.length; index++) {
+       output.innerHTML += "<td>" + enteredStringsTwo[index] + "</td>";
+       nameCounter++;
+       //total.innerHTML = "Total: " + nameCounter;
+    }
+
+
+/*
 var character1 = new Player(addCharacter());
 var character2 = new Player("Jim", 3, 5, 6, 21, 15, 12);
 

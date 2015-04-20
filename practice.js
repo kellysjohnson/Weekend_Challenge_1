@@ -1,3 +1,16 @@
+function add (){
+	var a = 8;
+	var b = 12;
+	var c = a*b;
+	var d = b-a;
+	return c;
+	return d;
+}
+
+console.log(add());
+
+
+/*
 var Monster = { name: "tryOut",
 				strength: 8, 
 				dexterity: 7, 
